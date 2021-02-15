@@ -1,0 +1,12 @@
+<div *ngFor="let user of users;let i=index">
+
+    {{user.name}} <br>
+   <div *ngIf="afficheHobbies==true">
+    Hobbies: <div *ngFor="let h of user.hobbies;let j=index">
+        {{h}} <button (click)="supprimer(i,j)">supp</button>
+
+        </div>
+        <hr>
+   </div>
+</div>
+<button (click)="afficher()">{{btnName}}</button>

@@ -1,0 +1,17 @@
+<form [formGroup]="userForm" (ngSubmit)="validerForm()">
+  Name:   <input type="text" formControlName="nom" placeholder="nom"> <br>
+  <div *ngIf="userForm.controls.nom.errors?.required && userForm.controls.nom.touched">
+      Ce champ est obligatoire
+  </div>
+  <div *ngIf="userForm.controls.nom.errors?.maxlength && userForm.controls.nom.touched">
+    max 10 chars
+</div>
+  email : <input type="email" formControlName="email" placeholder="email"> <br>
+  <div *ngIf="userForm.controls.email.errors?.email && userForm.controls.email.touched">
+   type email
+</div>
+<form formGroupName="informations">
+   Adresse : <input type="text" formControlName="address">
+</form>
+    <button type="submit" >Valider</button>
+</form>
